@@ -1,0 +1,38 @@
+pl:
+  date:
+    month_names:
+    - styczeń
+    - luty
+    - marzec
+    - kwiecień
+    - maj
+    - czerwiec 
+    - lipiec
+    - sierpień
+    - wrzesień
+    - październik
+    - listopad
+    - grudzień
+  activerecord: 
+    attributes:
+      klass:
+        klass_name: 'klasa auta'
+        price: 'cena'
+      car: 
+        name: 'Marka'
+        description: 'Opis'
+        klass: 'klasa'
+      lease:
+        lease_from: 'Od'
+        lease_to: 'Do'
+        leased_by_name: 'Imię'
+        leased_by_last_name: 'Nazwisko'
+        leased_by_identity_card_num: 'Numer dowodu tożsamości'
+  helpers:
+    submit:
+      klass:
+        create: 'dodaj nowa klase'
+      car:
+        create: 'dodaj nowe auto'
+      lease:
+        create: 'wypożycz'

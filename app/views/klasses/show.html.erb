@@ -1,0 +1,14 @@
+<span class="pull-right"><%= link_to 'wstecz', root_url, class: 'btn' %></span>
+Auta w tej klasie:
+
+<% if @klass.cars.any? %>
+  <% @klass.cars.each do |c| %>
+      <h3><%= c.name %></h3>
+      <div class='klass'>Klasa: <%= c.klass.klass_name %></div>
+      <div class='price'>Cena: <%= c.klass.price %>
+      <p><%= c.description %><p>
+      <%= link_to 'wypozycz', new_car_lease_path(c) %>
+  <% end %>
+  <% else %>
+    Brak
+<% end %>

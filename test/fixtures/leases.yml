@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lease_from: 2013-04-17
+  lease_to: 2013-04-17
+  leased_by_name: MyString
+  leased_by_last_name: MyString
+  leased_by_identity_card_num: MyString
+  car_id: 1
+
+two:
+  lease_from: 2013-04-17
+  lease_to: 2013-04-17
+  leased_by_name: MyString
+  leased_by_last_name: MyString
+  leased_by_identity_card_num: MyString
+  car_id: 1

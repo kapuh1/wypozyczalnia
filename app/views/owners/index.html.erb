@@ -1,0 +1,30 @@
+<span class="pull-right"><%= button_to 'wyloguj', destroy_owner_session_path, method: :delete, class: 'btn' %></span>
+
+<% if @klasses.any? %>
+  <% @klasses.each do |klass| %>
+    <%= link_to 'Klasa ' + klass.klass_name, klass_path(klass), class: 'btn' %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Dadaj nowa klase', new_klass_path, class: 'btn btn-info' %>
+<%= link_to 'Dodaj nowe auto', new_car_path, class: 'btn btn-primary' %>
+
+
+<% if @cars.any? %>
+  <div id='cars'>
+    Auta w wypozyczalni:
+    <% @cars.each do |car| %>
+    <div class='car'>
+      <hr />
+      <h3><%= link_to car.name, car_path(car) %></h3>
+      <div class='klass'>Klasa: <%= car.klass.klass_name %></div>
+      <div class='price'>Cena: <%= car.klass.price %>
+      <p class='desc'><%= car.description %><p>
+      <% if car.is_rented? %>
+        <strong>Auto wypożyczoone</strong>
+      <% end %>
+    <div>
+    <%= link_to 'wypozycz', new_car_lease_path(car) %>
+    <% end %>
+  </div>
+<% end %>

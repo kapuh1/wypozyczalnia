@@ -1,0 +1,7 @@
+<%= simple_form_for @car, url:  cars_path do |c| %>
+  <%= c.input :name %>
+  <%= c.input :description, as: :text, :input_html => { rows: 5 }  %>
+  <%= c.input :klass, collection: Klass.all.map { |k| k.klass_name }, prompt: nil %>
+  <%= link_to 'dadaj nowa klase', new_klass_path, class: 'btn' %>
+  <%= c.submit class: 'btn btn-primary' %>
+<% end %>

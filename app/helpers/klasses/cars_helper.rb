@@ -1,0 +1,2 @@
+module Klasses::CarsHelper
+end

@@ -1,0 +1,19 @@
+<h3><%= @car.name %></h3>
+<div class='klass'>Klasa: <%= @car.klass.klass_name %></div>
+<div class='price'>Cena: <%= @car.klass.price %>
+<p class='desc'><%= @car.description %><p>
+<%= link_to 'wypozycz', new_car_lease_path(@car) %>
+<% if @car.leases.any? %>
+  <div id='leases'>
+    Auto wypożycznone w dniach:
+    <% @car.leases.each do |lease| %>
+      <p class='lease'>
+      <%= lease.lease_from %> - 
+      <%= lease.lease_to %> przez 
+      <%= lease.leased_by_name %>
+      <%= lease.leased_by_last_name %>
+      <%= lease.leased_by_identity_card_num %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

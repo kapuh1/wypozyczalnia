@@ -1,0 +1,12 @@
+<%= simple_form_for [@car, @lease] do |l| %>
+ <%= l.input :leased_by_name %>
+ <%= l.input :leased_by_last_name %>
+ <%= l.input :leased_by_identity_card_num %>
+ <%= l.input :lease_from, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 12,
+                              order: [:day, :month, :year] %>
+ <%= l.input :lease_to, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 12, 
+                              order: [:day, :month, :year] %>
+ <%= l.submit %>
+<% end %>
